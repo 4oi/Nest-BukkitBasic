@@ -17,7 +17,7 @@ import org.bukkit.scheduler.BukkitTask
  */
 class SchedulerFunc(val bukkit: Server, val plugin: NestPlugin) {
 
-    @Func("do <executable> <delay> ticks later")
+    @Func(value = "do <executable> <delay> ticks later", perm = "schedule.later")
     fun later(executor: CommandExecutor, sender: NestCommandSender<*>, binding: Binding<Any>,
               delay: NestInt, executable: NestExecutable<*>): ScheduledTask {
         return ScheduledTask(bukkit.scheduler.runTaskLater(plugin, Runnable{
@@ -25,12 +25,18 @@ class SchedulerFunc(val bukkit: Server, val plugin: NestPlugin) {
         }, delay.unwrap()))
     }
 
-    @Func("do <executable> every <period> ticks since <delay> ticks later")
+    @Func(value = "do <executable> every <period> ticks since <delay> ticks later", perm = "schedule.timer")
     fun timer(executor: CommandExecutor, sender: NestCommandSender<*>, binding: Binding<Any>,
               delay: NestInt, period: NestInt, executable: NestExecutable<*>): ScheduledTask {
         return ScheduledTask(bukkit.scheduler.runTaskTimer(plugin, Runnable{
             executable.execute(executor,sender,binding)
         }, delay.unwrap(), period.unwrap()))
+    }
+
+    @Func(value = "cancel <task>", perm = "schedule.cancel")
+    fun cancel(executor: CommandExecutor, sender: NestCommandSender<*>, binding: Binding<Any>,
+               task: ScheduledTask): Unit {
+        task.cancel()
     }
 
     class ScheduledTask(val task: BukkitTask): NestValueAdapter<BukkitTask>(task) {

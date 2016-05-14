@@ -15,7 +15,7 @@ import java.util.stream.Collectors
  */
 class CommandFunc(val bukkit: Server) {
 
-    @Func(name = ":b", value = "execute <command> on bukkit")
+    @Func(name = ":b", value = "execute <command> on bukkit", perm="bukkit.execute")
     fun execute(executor: CommandExecutor, sender: BukkitCommandSender<CommandSender>, binding: Binding<Any>,
               vararg command: NestString): Unit {
         bukkit.dispatchCommand(sender.unwrap(), Arrays.stream(command).map { it.unwrap() }.collect(Collectors.joining(" ")));

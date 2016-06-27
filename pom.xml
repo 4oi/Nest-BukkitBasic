@@ -6,7 +6,7 @@
 
     <groupId>jp.llv</groupId>
     <artifactId>nest-bukkit-basic</artifactId>
-    <version>1</version>
+    <version>9</version>
     <build>
         <plugins>
             <plugin>
@@ -54,19 +54,19 @@
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.9.4-R0.1-SNAPSHOT</version>
+            <version>1.10.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>jp.llv</groupId>
             <artifactId>nest-bukkit</artifactId>
-            <version>0.0.2-alpha</version>
+            <version>0.4.0-beta</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>jp.llv</groupId>
             <artifactId>nest-kotlin</artifactId>
-            <version>1</version>
+            <version>2</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -77,7 +77,7 @@
         </dependency>
     </dependencies>
     <properties>
-        <kotlin.version>1.0.1-2</kotlin.version>
+        <kotlin.version>1.0.2-1</kotlin.version>
     </properties>
 
 </project>

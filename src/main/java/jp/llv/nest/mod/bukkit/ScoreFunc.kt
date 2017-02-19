@@ -1,3 +1,7 @@
+/*
+ * Copyright (C) 2017 toyblocks All rights reserved.
+ */
+
 package jp.llv.nest.mod.bukkit
 
 import jp.llv.nest.command.Context

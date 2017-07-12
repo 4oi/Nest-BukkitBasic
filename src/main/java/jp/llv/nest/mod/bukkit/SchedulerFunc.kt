@@ -4,7 +4,7 @@
 
 package jp.llv.nest.mod.bukkit
 
-import jp.llv.nest.NestPlugin
+import jp.llv.nest.NestBukkitPlugin
 import jp.llv.nest.command.Context
 import jp.llv.nest.command.Func
 import jp.llv.nest.command.obj.NestCommandSender
@@ -17,7 +17,7 @@ import org.bukkit.scheduler.BukkitTask
 /**
  * Created by toyblocks on 2016/05/14.
  */
-class SchedulerFunc(val bukkit: Server, val plugin: NestPlugin) {
+class SchedulerFunc(val bukkit: Server, val plugin: NestBukkitPlugin) {
 
     @Func(value = "do <executable> <delay> ticks later", perm = "schedule.later")
     fun <S: NestCommandSender<*>>later(context: Context<S>,

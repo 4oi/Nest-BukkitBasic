@@ -15,7 +15,7 @@ import javax.inject.Inject
 /**
  * Created by toyblocks on 2016/05/14.
  */
-@Module(name = "bukkit-basics", author = "toyblocks", version = 10)
+@Module(name = "bukkit-basics", author = "toyblocks", version = 11)
 class BukkitBasicsModule @Inject constructor(val api: NestAPIBukkit, val bukkit: Server, val plugin: NestBukkitPlugin, kotlin: KotlinModule){
 
     @Func("Provides a way to access to scoreboard")
@@ -26,7 +26,7 @@ class BukkitBasicsModule @Inject constructor(val api: NestAPIBukkit, val bukkit:
         api.registerFunc(LocationFunc())
         api.registerFunc(PlayerFunc(bukkit))
         api.registerFunc(CommandFunc(bukkit))
-        api.registerFunc(SchedulerFunc(bukkit, plugin))
+        api.registerFunc(SchedulerFunc(bukkit, plugin, api))
     }
 
 }

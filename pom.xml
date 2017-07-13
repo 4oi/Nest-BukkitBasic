@@ -6,7 +6,7 @@
 
     <groupId>jp.llv</groupId>
     <artifactId>nest-bukkit-basic</artifactId>
-    <version>10</version>
+    <version>11</version>
     <build>
         <plugins>
             <plugin>
@@ -54,13 +54,13 @@
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.10.2-R0.1-SNAPSHOT</version>
+            <version>1.12-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>jp.llv</groupId>
-            <artifactId>nest-bukkit</artifactId>
-            <version>0.8.0-beta</version>
+            <artifactId>nest-bukkit-api</artifactId>
+            <version>0.8.2-beta</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
